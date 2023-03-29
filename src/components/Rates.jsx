@@ -30,24 +30,35 @@ const Rates = ({currency, loading}) => {
 
 
     return <div className='rates__container'>
-        <h1 className='rates__header'>Current Conversion Rates</h1>
-        <h3 className='rates__title'>Current Rate: </h3>
-        {!click && <div className="rate__floats">
-            <p>1 BTC is {loading && 1/currency.USD.rate_float}</p>
-            <p>1 BTC is {loading && 1/currency.EUR.rate_float}</p>
-            <p>1 BTC is {loading && 1/currency.GBP.rate_float}</p>
-            <button className="sort__btn" onClick={sortHandle}>Sort</button>
-        </div>}
+            <h1 className='rates__header'>Current Conversion Rates</h1>
+            <h3 className='rates__title'>Current Rate: </h3>
+            {!click && (
+                <div className="rate__floats">
+                    <p>1 BTC is {loading && 1/currency.USD.rate_float}</p>
+                    <p>1 BTC is {loading && 1/currency.EUR.rate_float}</p>
+                    <p>1 BTC is {loading && 1/currency.GBP.rate_float}</p>
+                    <button className="sort__btn" onClick={sortHandle}>
+                        Sort
+                    </button>
+                </div>
+            )}
 
-    {!!click && <div className="rate__floats">
-        {rates.map((rate, code) => {
-        return <div key={code}>
-            <p>1 BTC is {rate}</p>
-        </div>
+    {!!click &&
+        <div className="rate__floats">
+            {rates.map((rate, code) => {
+
+            return (
+                <div key={code}>
+                    <p>1 BTC is {rate}</p>
+                </div>
+            )
         })}
 
-        <button className="sort__btn" onClick={sortHandle}>Click To Sort</button>
-    </div>}
+            <button className="sort__btn" onClick={sortHandle}>
+                Click To Sort
+            </button>
+    </div>
+}
 
     </div>
 }

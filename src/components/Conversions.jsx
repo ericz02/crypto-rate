@@ -29,16 +29,21 @@ const Conversions = ({currency, loading}) => {
 
 
     return <div className="conversion__container">
+
         <h1 className='conversion__header'>Conversions</h1>
         <div className="currency__div">
+
             <label htmlFor="currencies">Pick the Currency:</label>
             <input type="text" value={amount} onChange={amountHandler}></input>
+
             <select className="curr__selector" name="currencies" id="currencies" value={currencies} onChange={currencyHandler}>
                 <option value="USD">USD</option>
                 <option value="EUR">EUR</option>
                 <option value="GBP">GBP</option>
             </select>
+
             <p>{amount} {currencies} = {amount / rates[index]} BTC</p>
+            
         </div>
     </div>
 }

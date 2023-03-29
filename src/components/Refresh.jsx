@@ -25,10 +25,10 @@ const Refresh = ({time}) => {
       }
 
     return <div>
-    <p className="time__refresh">
+      <p className="time__refresh">
       Last Refresh Time: {new Date(time).toLocaleString()}<br/>
       <button className="refresh__btn" onClick={canRefresh}>Click To Refresh</button>
-    </p>
+      </p>
     
     </div>
 }
